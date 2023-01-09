@@ -1,0 +1,122 @@
+
+#iniciar un proyecto de django################################
+                                                             #
+    django-admin startproject mysite                         #
+                                                             #
+##############################################################
+
+#los 5 archivos que se crean son:#############################
+                                                             #
+init.py que esto es un paquete                               #
+asgi.py y wsgi.py son archivos para el deploy                #
+settings.py es el archivo de configuración                   #
+urls.py es el archivo de rutas                               #
+manage.py es el archivo que se usa para correr el proyecto   #
+##############################################################
+
+#para correr el proyecto#######################################
+                                                              #
+py manage.py runserver                                        #
+                                                              #
+###############################################################
+
+#para crear una app############################################
+                                                              #
+py manage.py startapp polls                                   #
+                                                              #
+###############################################################
+
+#para crear una migración######################################
+                                                              #
+                                                              #
+py manage.py makemigrations polls                             #
+                                                              #
+###############################################################
+
+#para aplicar la migración#####################################
+                                                              #
+py manage.py migrate                                          #
+                                                              #
+###############################################################
+
+#consola de django#############################################
+                                                              #
+                                                              #
+py manage.py shell                                            #
+                                                              #             
+
+/* from polls.models import Question, Choice
+
+    #para acceder a todos los registros de la base de datos 
+    Question.objects.all()
+
+    from django.utils import timezone
+    
+    #para crear un registro en la base de datos
+
+    q = Question(question_text = "¿Qué es lo que más te gusta?", pub_date = timezone.now())
+
+    #para guardar en la base de datos
+    q.save()
+
+    #para acceder a los atributos de un registro
+    q.id
+
+    #para acceder a los atributos de un registro 
+    #marca error 
+    #porque get trae un objeto de la llamada 
+    Question.objects.get(pub_date__year=timezone.now().year)
+
+    #Este si funciona porque filter puede traer varios objetos
+    Question.objects.filter(pk =1 )
+
+    #filtrar objetos que empiecen con un caracter 
+    Question.objects.filter(question_text__startswith='¿Qué')
+
+
+    #para acceder a los atributos de un registro
+    q.choice_set.all()
+
+    q.choice_set.create(choice_text='No me gusta nada', votes=0)
+
+
+    q.choice_set.count()
+
+
+autoacompletar en la consola de django#######################
+                                                            #
+    pip install django-extensions                           #
+                                                            #               
+                                                    
+    INSTALLED_APPS = [                                             
+        'django.contrib.admin',                                     
+        'django.contrib.auth',                            
+        'django.contrib.contenttypes',                     
+        'django.contrib.sessions',                        
+        'django.contrib.messages',                          
+        'django.contrib.staticfiles',                       
+        'polls',                                            
+        'django_extensions',                                   
+    ]
+    ejecurar
+    py manage.py shell_plus
+##############################################################
+
+crear un super usuario#######################################
+                                                            #
+
+    py manage.py createsuperuser
+
+    hermo 
+    daliCode123
+
+para registar 
+
+from django.contrib import admin
+from .models import Question, Choice
+
+admin.site.register([Question, Choice])
+##############################################################
+
+
+
